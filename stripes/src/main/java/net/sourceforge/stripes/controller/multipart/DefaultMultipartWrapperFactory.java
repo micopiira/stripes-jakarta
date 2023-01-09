@@ -19,7 +19,7 @@ import net.sourceforge.stripes.config.Configuration;
 import net.sourceforge.stripes.util.Log;
 import net.sourceforge.stripes.exception.StripesRuntimeException;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.File;
 import java.util.regex.Pattern;

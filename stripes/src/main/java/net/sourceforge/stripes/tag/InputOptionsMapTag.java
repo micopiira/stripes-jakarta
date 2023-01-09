@@ -16,7 +16,7 @@ package net.sourceforge.stripes.tag;
 
 import java.util.Map;
 
-import javax.servlet.jsp.JspException;
+import jakarta.servlet.jsp.JspException;
 
 import net.sourceforge.stripes.tag.InputOptionsCollectionTag;
 

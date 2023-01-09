@@ -1,26 +1,19 @@
 package net.sourceforge.stripes.controller;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.Serializable;
 import java.security.Principal;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletInputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 
 /**
- * Captures the state of an {@link javax.servlet.http.HttpServletRequest} so that the information
+ * Captures the state of an {@link jakarta.servlet.http.HttpServletRequest} so that the information
  * contained therein can be carried over to the next request for use by the flash scope. There are
  * several methods in here that cannot be faked and so must delegate to an active {@link
- * javax.servlet.http.HttpServletRequest} object, the {@link #delegate}. If one of these methods is
+ * jakarta.servlet.http.HttpServletRequest} object, the {@link #delegate}. If one of these methods is
  * called and there is no delegate object set on the instance, they will throw a {@link
  * net.sourceforge.stripes.exception.StripesRuntimeException}. Unless this class is used outside its
  * intended context (during a live request processed through {@link StripesFilter}), you won't need
@@ -62,7 +55,6 @@ public class FlashRequest implements HttpServletRequest, Serializable {
     private StringBuffer requestURL;
     private boolean requestedSessionIdFromCookie;
     private boolean requestedSessionIdFromURL;
-    private boolean requestedSessionIdFromUrl;
     private boolean requestedSessionIdValid;
     private boolean secure;
     private int localPort;
@@ -114,7 +106,6 @@ public class FlashRequest implements HttpServletRequest, Serializable {
         requestedSessionId = prototype.getRequestedSessionId();
         requestedSessionIdFromCookie = prototype.isRequestedSessionIdFromCookie();
         requestedSessionIdFromURL = prototype.isRequestedSessionIdFromURL();
-        requestedSessionIdFromUrl = prototype.isRequestedSessionIdFromUrl();
         requestedSessionIdValid = prototype.isRequestedSessionIdValid();
         scheme = prototype.getScheme();
         secure = prototype.isSecure();
@@ -249,6 +240,11 @@ public class FlashRequest implements HttpServletRequest, Serializable {
         return getDelegate().getSession();
     }
 
+    @Override
+    public String changeSessionId() {
+        return getDelegate().changeSessionId();
+    }
+
     public boolean isRequestedSessionIdValid() {
         return requestedSessionIdValid;
     }
@@ -261,9 +257,34 @@ public class FlashRequest implements HttpServletRequest, Serializable {
         return requestedSessionIdFromURL;
     }
 
-    @Deprecated
-    public boolean isRequestedSessionIdFromUrl() {
-        return requestedSessionIdFromUrl;
+    @Override
+    public boolean authenticate(HttpServletResponse response) throws IOException, ServletException {
+        return getDelegate().authenticate(response);
+    }
+
+    @Override
+    public void login(String username, String password) throws ServletException {
+        getDelegate().login(username, password);
+    }
+
+    @Override
+    public void logout() throws ServletException {
+        getDelegate().logout();
+    }
+
+    @Override
+    public Collection<Part> getParts() throws IOException, ServletException {
+        return getDelegate().getParts();
+    }
+
+    @Override
+    public Part getPart(String name) throws IOException, ServletException {
+        return getDelegate().getPart(name);
+    }
+
+    @Override
+    public <T extends HttpUpgradeHandler> T upgrade(Class<T> handlerClass) throws IOException, ServletException {
+        return getDelegate().upgrade(handlerClass);
     }
 
     public Object getAttribute(String name) {
@@ -284,6 +305,11 @@ public class FlashRequest implements HttpServletRequest, Serializable {
 
     public int getContentLength() {
         return 0;
+    }
+
+    @Override
+    public long getContentLengthLong() {
+        return 0L;
     }
 
     public String getContentType() {
@@ -363,11 +389,6 @@ public class FlashRequest implements HttpServletRequest, Serializable {
         return getDelegate().getRequestDispatcher(name);
     }
 
-    @Deprecated
-    public String getRealPath(String name) {
-        return getDelegate().getRealPath(name);
-    }
-
     public int getRemotePort() {
         return remotePort;
     }
@@ -382,5 +403,55 @@ public class FlashRequest implements HttpServletRequest, Serializable {
 
     public int getLocalPort() {
         return localPort;
+    }
+
+    @Override
+    public ServletContext getServletContext() {
+        return getDelegate().getServletContext();
+    }
+
+    @Override
+    public AsyncContext startAsync() throws IllegalStateException {
+        return getDelegate().startAsync();
+    }
+
+    @Override
+    public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse) throws IllegalStateException {
+        return getDelegate().startAsync(servletRequest, servletResponse);
+    }
+
+    @Override
+    public boolean isAsyncStarted() {
+        return getDelegate().isAsyncStarted();
+    }
+
+    @Override
+    public boolean isAsyncSupported() {
+        return getDelegate().isAsyncSupported();
+    }
+
+    @Override
+    public AsyncContext getAsyncContext() {
+        return getDelegate().getAsyncContext();
+    }
+
+    @Override
+    public DispatcherType getDispatcherType() {
+        return getDelegate().getDispatcherType();
+    }
+
+    @Override
+    public String getRequestId() {
+        return getDelegate().getRequestId();
+    }
+
+    @Override
+    public String getProtocolRequestId() {
+        return getDelegate().getProtocolRequestId();
+    }
+
+    @Override
+    public ServletConnection getServletConnection() {
+        return getDelegate().getServletConnection();
     }
 }

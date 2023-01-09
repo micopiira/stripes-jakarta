@@ -21,9 +21,10 @@ import net.sourceforge.stripes.util.Log;
 import net.sourceforge.stripes.util.ReflectUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.NestedRuntimeException;
+
+import jakarta.servlet.ServletContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.ServletContext;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Collection;

@@ -14,8 +14,8 @@
  */
 package net.sourceforge.stripes.tag;
 
-import javax.servlet.jsp.tagext.BodyTag;
-import javax.servlet.jsp.JspException;
+import jakarta.servlet.jsp.tagext.BodyTag;
+import jakarta.servlet.jsp.JspException;
 
 /**
  * <p>Support tag class that can generate HTML form fields with localized value attributes.

@@ -17,8 +17,8 @@ package net.sourceforge.stripes.validation.expression;
 import net.sourceforge.stripes.util.Log;
 import net.sourceforge.stripes.controller.DispatcherHelper;
 
-import javax.servlet.jsp.el.ExpressionEvaluator;
-import javax.servlet.jsp.PageContext;
+import jakarta.servlet.jsp.el.ExpressionEvaluator;
+import jakarta.servlet.jsp.PageContext;
 
 /**
  * An implementation of {@link ExpressionExecutor} that uses the container's built in
