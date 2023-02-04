@@ -32,7 +32,7 @@ public class RegisterActionBean extends BugzookyActionBean {
     })
     private Person user;
 
-    @Validate(required=true, minlength=5, maxlength=20, expression="this == user.password")
+    @Validate(required=true, minlength=5, maxlength=20, expression="self == user.password")
     private String confirmPassword;
 
     /** The user being registered. */

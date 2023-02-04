@@ -6,7 +6,7 @@
 
 		<stripes:errors globalErrorsOnly="true" />
 
-		<stripes:form beanclass="${actionBean.class}" focus="">
+		<stripes:form beanclass="${actionBean['class']}" focus="">
 			<p>Please provide the following information:</p>
 
 			<table class="leftRightForm">
