@@ -124,6 +124,7 @@ public class ReflectUtil {
      * <ul>
      *   <li>Uses the classes simple name instead of it's fully qualified name.</li>
      *   <li>Only outputs attributes that are set to non-default values.</li>
+     * </ul>
      *
      * <p>If, for some unforseen reason, an exception is thrown within this method it will be
      * caught and the return value will be {@code ann.toString()}.

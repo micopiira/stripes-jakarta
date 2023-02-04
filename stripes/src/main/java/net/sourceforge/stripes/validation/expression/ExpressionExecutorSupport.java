@@ -71,7 +71,7 @@ public abstract class ExpressionExecutorSupport implements ExpressionExecutor {
          *
          * @param property the name of the variable/property being looked for
          * @return the property value or null
-         * @throws javax.servlet.jsp.el.ELException
+         * @throws jakarta.servlet.jsp.el.ELException
          */
         public Object resolveVariable(String property) throws ELException {
             if (isSelfKeyword(bean, property)) {

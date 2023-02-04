@@ -50,7 +50,7 @@ import net.sourceforge.stripes.controller.StripesFilter;
  * </p>
  * <code>Stripes.HtmlMode</code> will set the default X/HTML output for the <strong>entire</strong>
  * application. Individual views of the application wishing to alter the application default will
- * provide this tag, at or near the beginning of the view, or JSP.</p>
+ * provide this tag, at or near the beginning of the view, or JSP.
  * 
  * @author Timothy Stone
  * @since 1.5.5

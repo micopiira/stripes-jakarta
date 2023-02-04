@@ -151,7 +151,7 @@ public class NameBasedActionResolver extends AnnotatedClassActionResolver {
      * Takes a class name and translates it into a URL binding by removing extraneous package names,
      * removing Action, Bean, or ActionBean from the end of the class name if present, replacing
      * periods with slashes, and appending a standard suffix as supplied by
-     * {@link net.sourceforge.stripes.controller.NameBasedActionResolver#getBindingSuffix()}.</p>
+     * {@link net.sourceforge.stripes.controller.NameBasedActionResolver#getBindingSuffix()}.
      *
      * <p>For example the class {@code com.myco.web.action.user.RegisterActionBean} would be
      * translated to {@code /user/Register.action}.  The behaviour of this method can be

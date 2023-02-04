@@ -20,13 +20,12 @@ import net.sourceforge.stripes.validation.ValidationErrors;
 import net.sourceforge.stripes.config.ConfigurableComponent;
 
 /**
- * <p>Interface for class(es) responsible for taking the String/String[] properties contained in the
+ * Interface for class(es) responsible for taking the String/String[] properties contained in the
  * HttpServletRequest and:
  * <ul>
  *     <li>Converting them to the rich type of the property on the target JavaBean</li>
  *     <li>Setting the properties on the JavaBean using the appropriate mechanism</li>
  * </ul>
- * </p>
  *
  * <p>Implementations may also perform validations of the fields during binding.  If validation
  * errors occur then the collection of ValidationErrors contained within the ActionBeanContext

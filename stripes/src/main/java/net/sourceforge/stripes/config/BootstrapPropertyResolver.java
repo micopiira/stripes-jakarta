@@ -36,13 +36,12 @@ import net.sourceforge.stripes.vfs.VFS;
  * be instantiated, and any values needed by that configuration class to locate configuration
  * information.</p>
  *
- * <p>Properties are looked for in the following order:
+ * Properties are looked for in the following order:
  *  <ul>
  *      <li>Initialization Parameters for the Dispatcher servlet</li>
  *      <li>Initialization Parameters for the Servlet Context</li>
  *      <li>Java System Properties</li>
  *  </ul>
- * </p>
  *
  * @author Tim Fennell
  */

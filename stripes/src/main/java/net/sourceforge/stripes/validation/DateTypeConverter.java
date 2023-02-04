@@ -57,7 +57,6 @@ import java.util.regex.Pattern;
  *     <li>yyyy MMM d</li>
  *     <li>EEE MMM dd HH:mm:ss zzz yyyy (the format created by Date.toString())</li>
  *   </ul>
- * </p>
  *
  * <p>This default set of formats can be changed by providing a different set of format strings in
  * the Stripes resource bundle, or by subclassing and overriding getFormatStrings().  In all cases
@@ -67,13 +66,12 @@ import java.util.regex.Pattern;
  * <p>The regular expression pattern used in the pre-process method can also be changed in the
  * Stripes resource bundle, or by subclassing and overriding the getPreProcessPattern() method.</p>
  *
- * <p>The keys used in the resource bundle to specify the format strings and the pre-process
+ * The keys used in the resource bundle to specify the format strings and the pre-process
  * pattern are:
  *   <ul>
  *     <li>stripes.dateTypeConverter.formatStrings</li>
  *     <li>stripes.dateTypeConverter.preProcessPattern</li>
  *   </ul>
- * </p>
  *
  * <p>DateTypeConverter can also be overridden in order to change its behaviour. Subclasses can
  * override the preProcessInput() method to change the pre-processing behavior if desired. Similarly,

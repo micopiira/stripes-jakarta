@@ -20,7 +20,7 @@ import java.util.Collection;
 import java.lang.reflect.Array;
 
 /**
- * <p>Generates one or more {@literal <input type="hidden" ... />} HTML tags based on the value
+ * Generates one or more {@literal <input type="hidden" ... />} HTML tags based on the value
  * supplied.  The hidden tag assigns the value attribute by scanning in the following order:
  * <ul>
  *   <li>for one or more values with the same name in the HttpServletRequest</li>
@@ -28,7 +28,6 @@ import java.lang.reflect.Array;
  *   <li>by collapsing the body content to a String, if a body is present</li>
  *   <li>referring to the result of the EL expression contained in the value attribute of the tag.</li>
  * </ul>
- * </p>
  *
  * <p>The result of this scan can produce either a Collection, an Array or any other Object. In the
  * first two cases the tag will output an HTML hidden form field tag for each value in the

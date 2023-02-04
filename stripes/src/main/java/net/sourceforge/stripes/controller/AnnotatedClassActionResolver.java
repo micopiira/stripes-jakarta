@@ -326,7 +326,7 @@ public class AnnotatedClassActionResolver implements ActionResolver {
      * @param path a URL to which an ActionBean is bound, or a path starting with the URL
      *        to which an ActionBean has been bound.
      * @param context the current ActionBeanContext
-     * @return a Class<ActionBean> for the ActionBean requested
+     * @return a {@code Class<ActionBean>} for the ActionBean requested
      * @throws StripesServletException if the UrlBinding does not match an ActionBean binding
      */
     public ActionBean getActionBean(ActionBeanContext context, String path) throws StripesServletException {

@@ -208,7 +208,6 @@ public class DefaultExceptionHandler implements ExceptionHandler {
     }
 
     /**
-     * <p>
      * {@link FileUploadLimitExceededException} is notoriously difficult to handle for several
      * reasons:
      * <ul>
@@ -220,7 +219,6 @@ public class DefaultExceptionHandler implements ExceptionHandler {
      * service. That includes the {@code _sourcePage} parameter that indicates the page from which
      * the request was submitted.</li>
      * </ul>
-     * </p>
      * <p>
      * This exception handler makes an attempt to handle the exception as gracefully as possible. It
      * relies on the HTTP Referer header to determine where the request was submitted from. It uses
@@ -239,7 +237,7 @@ public class DefaultExceptionHandler implements ExceptionHandler {
      * A simple way to provide a single, global error page for this type of exception is to override
      * {@link #getFileUploadExceededExceptionPath(HttpServletRequest)} to return the path to your
      * global error page.
-     * <p>
+     * </p>
      * 
      * @param exception The exception that needs to be handled
      * @param request The servlet request

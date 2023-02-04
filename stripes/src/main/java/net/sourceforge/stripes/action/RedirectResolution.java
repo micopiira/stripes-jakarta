@@ -31,7 +31,7 @@ import java.util.HashSet;
  * <p>Resolution that uses the Servlet API to <em>redirect</em> the user to another path by issuing
  * a client side redirect. Unlike the ForwardResolution the RedirectResolution can send the user to
  * any URL anywhere on the web - though it is more commonly used to send the user to a location
- * within the same application.<p>
+ * within the same application.</p>
  *
  * <p>By default the RedirectResolution will prepend the context path of the web application to
  * any URL before redirecting the request. To prevent the context path from being prepended

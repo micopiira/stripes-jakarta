@@ -37,7 +37,6 @@ import net.sourceforge.stripes.util.Log;
 import net.sourceforge.stripes.util.bean.ParseException;
 
 /**
- * <p>
  * Provides access to {@link UrlBinding} objects. Bindings are used in two contexts:
  * <ul>
  * <li><strong>As a prototype:</strong> Binding prototypes provide static information about the
@@ -48,7 +47,6 @@ import net.sourceforge.stripes.util.bean.ParseException;
  * or request URI are exactly like their prototypes except that the parameter values associated with
  * them contain the values (if any) that were extracted from the URI.</li>
  * </ul>
- * </p>
  * 
  * @author Ben Gunter
  * @since Stripes 1.5

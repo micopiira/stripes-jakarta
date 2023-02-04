@@ -33,7 +33,6 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
  * Alternatively, binding can be enabled or disabled through the use of the {@link #allow()} and
  * {@link #deny()} elements of this annotation.
  * </p>
- * <p>
  * Properties may be named explicitly or by using globs. A single star (*) matches any property of
  * an element. Two stars (**) indicate any property of an element, including properties of that
  * property and so on. For security reasons, partial matches are not allowed so globs like
@@ -46,7 +45,6 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
  * the {@link ActionBean}</li>
  * <li>{@code user, user.*} - the user property and any property of the user
  * </ul>
- * </p>
  * <p>
  * The {@link #allow()} and {@link #deny()} elements are of type String[], but each string in the
  * array may be a comma-separated list of properties. Thus the

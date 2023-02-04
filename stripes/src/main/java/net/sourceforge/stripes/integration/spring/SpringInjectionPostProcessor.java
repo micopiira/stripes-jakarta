@@ -24,7 +24,7 @@ import net.sourceforge.stripes.util.Log;
 /**
  * <p>
  * An implementation of {@link ObjectPostProcessor} that calls {@link
- * SpringHelper#injectBeans((Object, ServletContext))} to inject dependencies marked with
+ * SpringHelper#injectBeans(Object, ServletContext)} to inject dependencies marked with
  * {@link SpringBean} in every type of object created by Stripes (Action Beans, Interceptors, Type
  * Converters, Formatters, etc.).
  * </p>
@@ -58,7 +58,7 @@ public class SpringInjectionPostProcessor implements ObjectPostProcessor<Object>
     }
 
     /**
-     * Calls {@link SpringHelper#injectBeans((Object, ServletContext))} to inject dependencies
+     * Calls {@link SpringHelper#injectBeans(Object, ServletContext)} to inject dependencies
      * marked with {@link SpringBean} into the object before returning it.
      */
     public Object postProcess(Object object) {

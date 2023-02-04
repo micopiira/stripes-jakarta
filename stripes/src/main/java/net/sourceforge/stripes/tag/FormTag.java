@@ -484,7 +484,7 @@ public class FormTag extends HtmlTagSupport implements BodyTag, TryCatchFinally,
      * all field names, if it is called during the body of the tag it will only contain the
      * input elements which have been processed up until that point.
      *
-     * @return Set<String> - the set of field names seen so far
+     * @return the set of field names seen so far
      */
     public Set<String> getRegisteredFields() {
         return this.fieldsPresent.keySet();

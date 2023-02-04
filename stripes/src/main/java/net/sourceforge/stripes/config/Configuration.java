@@ -180,7 +180,7 @@ public interface Configuration {
      * are invoked around the code which executes the given lifecycle function (e.g.
      * ActionBeanResolution), and as a result can execute code both before and after it.
      *
-     * @return Collection<Interceptor> an ordered collection of interceptors to be executed
+     * @return an ordered collection of interceptors to be executed
      *         around the given lifecycle stage.
      */
     Collection<Interceptor> getInterceptors(LifecycleStage stage);

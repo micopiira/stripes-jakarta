@@ -73,7 +73,6 @@ import org.xml.sax.SAXException;
  * {@link Configuration} through {@link StripesFilter}. If you intend to access JSPs directly, then
  * {@link StripesFilter} should be explicitly mapped to {@code *.jsp}.
  * </p>
- * <p>
  * This filter takes the following approach to determining when to dispatch an {@link ActionBean}:
  * <ol>
  * <li>Allow the request to process normally, trapping any HTTP errors that are returned.</li>
@@ -83,7 +82,6 @@ import org.xml.sax.SAXException;
  * not, then send the {@code 404} error through. Otherwise...</li>
  * <li>Invoke {@link StripesFilter} and {@link DispatcherServlet}</li>
  * </ol>
- * </p>
  * <p>
  * One benefit of this approach is that static resources can be delivered from the same namespace to
  * which an {@link ActionBean} is mapped using clean URLs. (For more information on clean URLs, see

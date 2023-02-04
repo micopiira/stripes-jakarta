@@ -23,7 +23,7 @@ import jakarta.servlet.jsp.PageContext;
 /**
  * An implementation of {@link ExpressionExecutor} that uses the container's built in
  * JSP2.0 EL implementation. This requires that the DispatcherServlet allocates a
- * {@link javax.servlet.jsp.PageContext} object earlier in the request cycle in order
+ * {@link jakarta.servlet.jsp.PageContext} object earlier in the request cycle in order
  * to gain access to the ExpressionEvaluator.  This can cause problems in some containers.
  *
  * @author Tim Fennell

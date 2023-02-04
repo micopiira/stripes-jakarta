@@ -40,7 +40,7 @@ import java.util.Locale;
  *<pre>{@literal <stripes:options-enumeration enum="net.kitty.EyeColor" label="description"/>}</pre>
  *
  * when generating the option for the value {@code EyeColor.BLUE} will look for a label in the
- * following order:</p>
+ * following order:
  *
  * <ul>
  *   <li>resource: EyeColor.BLUE (skipped if localizeLabels is set to false)</li>
@@ -80,7 +80,7 @@ public class InputOptionsEnumerationTag extends InputOptionsCollectionTag {
      *
      * @return SKIP_BODY in all cases.
      * @throws JspException if the class name supplied is not a valid class, or cannot be cast
-     *         to Class<Enum>.
+     *         to {@link Class<Enum>}.
      */
     @Override
     @SuppressWarnings("unchecked")

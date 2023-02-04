@@ -30,7 +30,6 @@ import java.lang.annotation.Target;
  * client-side caching for all events except those that are annotated with
  * {@code @HttpCache(allow=true)}.
  * </p>
- * <p>
  * Some examples:
  * <ul>
  * <li>{@code @HttpCache} - Same behavior as if the annotation were not present. No headers are
@@ -40,7 +39,6 @@ import java.lang.annotation.Target;
  * document.</li>
  * <li>{@code @HttpCache(expires=600)} - Caching is allowed. The document expires in 10 minutes.</li>
  * </ul>
- * </p>
  * 
  * @author Ben Gunter
  * @since Stripes 1.5

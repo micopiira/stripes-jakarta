@@ -744,7 +744,7 @@ public class DefaultActionBeanPropertyBinder implements ActionBeanPropertyBinder
      * @param validationInfo the validation metadata for the property if defined
      * @param errors a List into which ValidationError objects will be populated for any errors
      *            discovered during conversion.
-     * @return List<Object> a List of objects containing only objects of the desired type. It is
+     * @return a List of objects containing only objects of the desired type. It is
      *         not guaranteed to be the same length as the values array passed in.
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
