@@ -244,7 +244,7 @@
 							</goals>
 							<configuration>
 								<overview>${basedir}/src/main/resources/overview.html</overview>
-								<bottom>© Copyright 2005-2014, Stripes Development Team.</bottom>
+								<bottom><![CDATA[&copy; Copyright 2005-2014, Stripes Development Team.]]></bottom>
 								<author>true</author>
 								<show>protected</show>
 								<use>true</use>
