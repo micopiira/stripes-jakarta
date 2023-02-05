@@ -164,6 +164,26 @@ public class DefaultValidationMetadataProvider implements ValidationMetadataProv
                 List<PropertyDescriptor> pds = new ArrayList<PropertyDescriptor>(
                         Arrays.asList(ReflectUtil.getPropertyDescriptors(clazz)));
 
+                for (Method declaredMethod : clazz.getDeclaredMethods()) {
+                    String name = declaredMethod.getName();
+                    if (!name.startsWith("get") && !(name.startsWith("set") && declaredMethod.getParameterCount() == 1)) {
+                        continue;
+                    }
+                    String firstLetter = name.substring(3, 4);
+                    String suffix = name.substring(4);
+                    String prop = firstLetter.toLowerCase() + suffix;
+                    Method getter = null;
+                    try {
+                        getter = clazz.getDeclaredMethod("get" + firstLetter + suffix);
+                    } catch (NoSuchMethodException ignored) {}
+                    Method setter = null;
+                    try {
+                        setter = clazz.getDeclaredMethod("set" + firstLetter + suffix, getter == null
+                                ? declaredMethod.getParameterTypes()[0] : getter.getReturnType());
+                    } catch (NoSuchMethodException ignored) {}
+                    pds.add(new PropertyDescriptor(prop, getter, setter));
+                }
+
                 // Also look at public fields
                 Field[] publicFields = clazz.getFields();
                 for (Field field : publicFields) {
