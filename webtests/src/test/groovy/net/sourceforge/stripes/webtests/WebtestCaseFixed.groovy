@@ -54,6 +54,7 @@ abstract class WebtestCaseFixed extends GroovyTestCase
 			antBuilder.property(name: "wt.config.haltonerror", value: "true")
 			antBuilder.property(name: "wt.config.haltonfailure", value: "true")
             antBuilder.property(name: "wt.headless", value: System.getProperty("wt.headless", "true"))
+			antBuilder.property(name: "wt.parallel.nbWorkers", value: "1")
             antBuilder.property(name: "wt.config.resultpath", value: new File(temporaryWebTestResourcesFolder.parentFile, "webtest-results"))
 
 			def tmpWebtestXml = new File(temporaryWebTestResourcesFolder, "webtest.xml")
